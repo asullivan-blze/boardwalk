@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Installation &#8212; Boardwalk v0.8.24 (0094a52)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=50a4e793"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'installation';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command-line help reference" href="cli_helpdocs/index.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.8.24" />
+    <meta name="docbuild:last-update" content="Nov 08, 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/boardwalk_icon.jpg" class="logo__image only-light" alt="Boardwalk documentation - Home"/>
+    <img src="_static/boardwalk_icon.jpg" class="logo__image only-dark pst-js-only" alt="Boardwalk documentation - Home"/>
+  
+  
+    <p class="title logo__title">Boardwalk, a linear Ansible workflow engine <br /><sub>v0.8.24</sub></p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Boardwalk
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Command-line applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="cli_helpdocs/index.html">Command-line help reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="cli_helpdocs/boardwalk/index.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_catch.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">catch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_check.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">check</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_init.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_login.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">login</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_release.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">release</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_run.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">run</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_version.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">version</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_dump.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">dump</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_list.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_reset.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">reset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_show.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_use.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">use</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="cli_helpdocs/boardwalkd/index.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalkd/boardwalkd.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalkd/boardwalkd_serve.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">serve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalkd/boardwalkd_version.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">version</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="apidocs/index.html">Auto-generated API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="apidocs/boardwalk/boardwalk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_workspace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_workspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.app_exceptions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.app_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_run.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_run</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.state.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.manifest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.manifest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.ansible.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.ansible</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_catch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_catch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.host.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.host</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_init.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_init</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_login.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_login</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.server.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.state.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.slack.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.slack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.broadcast.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.broadcast</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.cli</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.protocol.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.protocol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.__main__</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/blob/main/docs/installation.md?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/edit/main/docs/installation.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/issues/new?title=Issue%20on%20page%20%2Finstallation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/installation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Installation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shell-completion">Shell Completion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash">Bash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zsh">Zsh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fish">Fish</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#container-install">Container Install</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<p>We recommend installing <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> in a <a class="reference external" href="https://pipx.pypa.io/stable/"><code class="docutils literal notranslate"><span class="pre">pipx</span></code></a>
+environment, to ensure that your system or user pip packages are not affected by
+Boardwalk’s dependencies. Refer to <code class="docutils literal notranslate"><span class="pre">pipx</span></code>’s documentation for how to install it,
+and then execute the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boardwalk depends on `ansible` in order to run.</span>
+pipx<span class="w"> </span>install<span class="w"> </span>ansible&gt;<span class="o">=</span><span class="m">6</span>.5.0
+<span class="c1"># Inject Boardwalk into the environment so it can use Ansible. Optionally,</span>
+<span class="c1"># appending an @&lt;git reference&gt; allows for installing specific commits,</span>
+<span class="c1"># branches, or tags.</span>
+pipx<span class="w"> </span>inject<span class="w"> </span>ansible<span class="w"> </span>git+ssh://git@github.com/Backblaze/boardwalk.git
+</pre></div>
+</div>
+<p><strong>Note</strong>:
+Boardwalk should be designed to be compatible with the current stable Python3
+release, minus 1 minor version. So, if the current stable version is <code class="docutils literal notranslate"><span class="pre">3.22.x</span></code>,
+Boardwalk should work with <code class="docutils literal notranslate"><span class="pre">3.21.x</span></code>. Consider using
+<a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> to maintain fresh python environment.</p>
+<section id="shell-completion">
+<h2>Shell Completion<a class="headerlink" href="#shell-completion" title="Link to this heading">#</a></h2>
+<p>To enable shell completion for <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> and <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>, the following set
+of commands will generate the completion script and add them to your shell (a
+shell restart will be needed):</p>
+<section id="bash">
+<h3>Bash<a class="headerlink" href="#bash" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">_BOARDWALK_COMPLETE</span><span class="o">=</span>bash_source<span class="w"> </span>boardwalk<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalk-complete.bash
+<span class="nv">_BOARDWALKD_COMPLETE</span><span class="o">=</span>bash_source<span class="w"> </span>boardwalkd<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalkd-complete.bash
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalk-complete.bash&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalkd-complete.bash&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</section>
+<section id="zsh">
+<h3>Zsh<a class="headerlink" href="#zsh" title="Link to this heading">#</a></h3>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="nv">_BOARDWALK_COMPLETE</span><span class="o">=</span>zsh_source<span class="w"> </span>boardwalk<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalk-complete.zsh
+<span class="nv">_BOARDWALKD_COMPLETE</span><span class="o">=</span>zsh_source<span class="w"> </span>boardwalkd<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalkd-complete.zsh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalk-complete.zsh&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalkd-complete.zsh&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
+</section>
+<section id="fish">
+<h3>Fish<a class="headerlink" href="#fish" title="Link to this heading">#</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">_BOARDWALK_COMPLETE</span><span class="o">=</span>fish_source<span class="w"> </span>boardwalk<span class="w"> </span>&gt;<span class="w"> </span>~/.config/fish/completions/boardwalk.fish
+<span class="nv">_BOARDWALKD_COMPLETE</span><span class="o">=</span>fish_source<span class="w"> </span>boardwalkd<span class="w"> </span>&gt;<span class="w"> </span>~/.config/fish/completions/boardwalkd.fish
+</pre></div>
+</div>
+</section>
+</section>
+<section id="container-install">
+<h2>Container Install<a class="headerlink" href="#container-install" title="Link to this heading">#</a></h2>
+<p>Boardwalk may be built as a container image by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">container</span></code>.</p>
+<p>The entrypoint is simply <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> so either <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> or <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>
+must be specified as the command when running.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cli_helpdocs/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Command-line help reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shell-completion">Shell Completion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash">Bash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zsh">Zsh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fish">Fish</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#container-install">Container Install</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Backblaze
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Backblaze.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Nov 08, 2024.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  
+    <div>Documentation generated with commit <span onclick="navigator.clipboard.writeText('0094a52503620e48b942bbff7ea9d472fd755c0e')" title="0094a52503620e48b942bbff7ea9d472fd755c0e">0094a52</span></div>
+    
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
