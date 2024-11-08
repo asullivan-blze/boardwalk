@@ -71,6 +71,8 @@ jobs:
         with:
           name: html-docs
           path: docs/build/
+          # Lower default retention -- the artifacts can be rebuilt from source, if needed
+          retention-days: 14
 
       # - name: Deploy main branch docs to gh-pages branch
       #   uses: peaceiris/actions-gh-pages@v4
