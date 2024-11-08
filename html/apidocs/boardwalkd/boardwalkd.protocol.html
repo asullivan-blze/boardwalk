@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>boardwalkd.protocol &#8212; Boardwalk v0.8.24 (c50de1f)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=50a4e793"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/boardwalkd/boardwalkd.protocol';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="boardwalkd.__main__" href="boardwalkd.__main__.html" />
+    <link rel="prev" title="boardwalkd.cli" href="boardwalkd.cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.8.24" />
+    <meta name="docbuild:last-update" content="Nov 08, 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/boardwalk_icon.jpg" class="logo__image only-light" alt="Boardwalk documentation - Home"/>
+    <img src="../../_static/boardwalk_icon.jpg" class="logo__image only-dark pst-js-only" alt="Boardwalk documentation - Home"/>
+  
+  
+    <p class="title logo__title">Boardwalk, a linear Ansible workflow engine <br /><sub>v0.8.24</sub></p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Boardwalk
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Command-line applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cli_helpdocs/index.html">Command-line help reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cli_helpdocs/boardwalk/index.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_catch.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">catch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_check.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">check</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_init.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_login.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">login</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_release.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">release</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_run.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">run</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_version.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">version</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_workspace.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_workspace_dump.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">dump</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_workspace_list.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_workspace_reset.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">reset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_workspace_show.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalk/boardwalk_workspace_use.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">use</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cli_helpdocs/boardwalkd/index.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalkd/boardwalkd.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalkd/boardwalkd_serve.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">serve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cli_helpdocs/boardwalkd/boardwalkd_version.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">version</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Auto-generated API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boardwalk/boardwalk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.cli_workspace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_workspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.app_exceptions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.app_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.cli_run.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_run</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.state.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.manifest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.manifest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.ansible.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.ansible</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.cli_catch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_catch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.host.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.host</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.cli_init.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_init</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boardwalk/boardwalk.cli_login.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_login</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="boardwalkd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd</span></code></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="boardwalkd.server.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardwalkd.state.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardwalkd.slack.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.slack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardwalkd.broadcast.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.broadcast</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardwalkd.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.cli</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.protocol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="boardwalkd.__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.__main__</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/blob/main/docs/apidocs/boardwalkd/boardwalkd.protocol.md?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/edit/main/docs/apidocs/boardwalkd/boardwalkd.protocol.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/issues/new?title=Issue%20on%20page%20%2Fapidocs/boardwalkd/boardwalkd.protocol.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/boardwalkd/boardwalkd.protocol.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>boardwalkd.protocol</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ProtocolBaseModel"><code class="docutils literal notranslate"><span class="pre">ProtocolBaseModel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ApiLoginMessage"><code class="docutils literal notranslate"><span class="pre">ApiLoginMessage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ApiLoginMessage.login_url"><code class="docutils literal notranslate"><span class="pre">ApiLoginMessage.login_url</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ApiLoginMessage.token"><code class="docutils literal notranslate"><span class="pre">ApiLoginMessage.token</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.host_pattern"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.host_pattern</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.workflow"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.workflow</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_command"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_command</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_hostname"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_hostname</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_limit"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_limit</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_username"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_username</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.message"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.message</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.severity"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.severity</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.create_time"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.create_time</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.received_time"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.received_time</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.severity_level"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.severity_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceSemaphores"><code class="docutils literal notranslate"><span class="pre">WorkspaceSemaphores</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceSemaphores.caught"><code class="docutils literal notranslate"><span class="pre">WorkspaceSemaphores.caught</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceSemaphores.has_mutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceSemaphores.has_mutex</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceNotFound"><code class="docutils literal notranslate"><span class="pre">WorkspaceNotFound</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceHasMutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceHasMutex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.get_api_token"><code class="docutils literal notranslate"><span class="pre">Client.get_api_token()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.api_login"><code class="docutils literal notranslate"><span class="pre">Client.api_login()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.authenticated_request"><code class="docutils literal notranslate"><span class="pre">Client.authenticated_request()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_delete_mutex"><code class="docutils literal notranslate"><span class="pre">Client.workspace_delete_mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_get_details"><code class="docutils literal notranslate"><span class="pre">Client.workspace_get_details()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_catch"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_catch()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_details"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_details()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_heartbeat"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_heartbeat()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_heartbeat_keepalive"><code class="docutils literal notranslate"><span class="pre">Client.workspace_heartbeat_keepalive()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_heartbeat_keepalive_connect"><code class="docutils literal notranslate"><span class="pre">Client.workspace_heartbeat_keepalive_connect()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_event"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_queue_event"><code class="docutils literal notranslate"><span class="pre">Client.workspace_queue_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.flush_event_queue"><code class="docutils literal notranslate"><span class="pre">Client.flush_event_queue()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_mutex"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_get_semaphores"><code class="docutils literal notranslate"><span class="pre">Client.workspace_get_semaphores()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.get_semaphores"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.get_semaphores()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.has_mutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.has_mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_catch"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_catch()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.caught"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.caught()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.heartbeat_keepalive_connect"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.heartbeat_keepalive_connect()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.mutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_details"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_details()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_heartbeat"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_heartbeat()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_event"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.queue_event"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.queue_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.unmutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.unmutex()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-boardwalkd.protocol">
+<span id="boardwalkd-protocol"></span><h1><a class="reference internal" href="#module-boardwalkd.protocol" title="boardwalkd.protocol"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.protocol</span></code></a><a class="headerlink" href="#module-boardwalkd.protocol" title="Link to this heading">#</a></h1>
+<p>This file defines objects that are passed between worker clients and the server,
+and contains functions to support clients using the server</p>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#boardwalkd.protocol.ProtocolBaseModel" title="boardwalkd.protocol.ProtocolBaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProtocolBaseModel</span></code></a></p></td>
+<td><p>BaseModel for protocol usage</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#boardwalkd.protocol.ApiLoginMessage" title="boardwalkd.protocol.ApiLoginMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ApiLoginMessage</span></code></a></p></td>
+<td><p>Model for websocket messages passed during authentication of CLI
+users to the API</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#boardwalkd.protocol.WorkspaceDetails" title="boardwalkd.protocol.WorkspaceDetails"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorkspaceDetails</span></code></a></p></td>
+<td><p>Model for basic workspace details from workers</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#boardwalkd.protocol.WorkspaceEvent" title="boardwalkd.protocol.WorkspaceEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorkspaceEvent</span></code></a></p></td>
+<td><p>Model for workspace events sent from boardwalk workers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#boardwalkd.protocol.WorkspaceSemaphores" title="boardwalkd.protocol.WorkspaceSemaphores"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorkspaceSemaphores</span></code></a></p></td>
+<td><p>Model for server-side workspace semaphores</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#boardwalkd.protocol.Client" title="boardwalkd.protocol.Client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Client</span></code></a></p></td>
+<td><p>Boardwalkd protocol client</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#boardwalkd.protocol.WorkspaceClient" title="boardwalkd.protocol.WorkspaceClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorkspaceClient</span></code></a></p></td>
+<td><p>Subclass of the Boardwalkd protocol client with the Workspace name
+pre-initialized</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.ProtocolBaseModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">ProtocolBaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**data:</span> <span class="pre">typing.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.ProtocolBaseModel" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<p>BaseModel for protocol usage</p>
+<p class="rubric">Initialization</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code class="docutils literal notranslate"><span class="pre">ValidationError</span></code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> is explicitly positional-only to allow <code class="docutils literal notranslate"><span class="pre">self</span></code> as a field name.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.ApiLoginMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">ApiLoginMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**data:</span> <span class="pre">typing.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.ApiLoginMessage" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#boardwalkd.protocol.ProtocolBaseModel" title="boardwalkd.protocol.ProtocolBaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boardwalkd.protocol.ProtocolBaseModel</span></code></a></p>
+<p>Model for websocket messages passed during authentication of CLI
+users to the API</p>
+<p class="rubric">Initialization</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code class="docutils literal notranslate"><span class="pre">ValidationError</span></code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> is explicitly positional-only to allow <code class="docutils literal notranslate"><span class="pre">self</span></code> as a field name.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.ApiLoginMessage.login_url">
+<span class="sig-name descname"><span class="pre">login_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.ApiLoginMessage.login_url" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.ApiLoginMessage.token">
+<span class="sig-name descname"><span class="pre">token</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.ApiLoginMessage.token" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">WorkspaceDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**data:</span> <span class="pre">typing.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#boardwalkd.protocol.ProtocolBaseModel" title="boardwalkd.protocol.ProtocolBaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boardwalkd.protocol.ProtocolBaseModel</span></code></a></p>
+<p>Model for basic workspace details from workers</p>
+<p class="rubric">Initialization</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code class="docutils literal notranslate"><span class="pre">ValidationError</span></code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> is explicitly positional-only to allow <code class="docutils literal notranslate"><span class="pre">self</span></code> as a field name.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails.host_pattern">
+<span class="sig-name descname"><span class="pre">host_pattern</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails.host_pattern" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails.workflow">
+<span class="sig-name descname"><span class="pre">workflow</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails.workflow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails.worker_command">
+<span class="sig-name descname"><span class="pre">worker_command</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails.worker_command" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails.worker_hostname">
+<span class="sig-name descname"><span class="pre">worker_hostname</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails.worker_hostname" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails.worker_limit">
+<span class="sig-name descname"><span class="pre">worker_limit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails.worker_limit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceDetails.worker_username">
+<span class="sig-name descname"><span class="pre">worker_username</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceDetails.worker_username" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">WorkspaceEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceEvent" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#boardwalkd.protocol.ProtocolBaseModel" title="boardwalkd.protocol.ProtocolBaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boardwalkd.protocol.ProtocolBaseModel</span></code></a></p>
+<p>Model for workspace events sent from boardwalk workers</p>
+<p class="rubric">Initialization</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code class="docutils literal notranslate"><span class="pre">ValidationError</span></code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> is explicitly positional-only to allow <code class="docutils literal notranslate"><span class="pre">self</span></code> as a field name.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceEvent.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceEvent.message" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceEvent.severity">
+<span class="sig-name descname"><span class="pre">severity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceEvent.severity" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceEvent.create_time">
+<span class="sig-name descname"><span class="pre">create_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><span class="pre">datetime.datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceEvent.create_time" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceEvent.received_time">
+<span class="sig-name descname"><span class="pre">received_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><span class="pre">datetime.datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceEvent.received_time" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceEvent.severity_level">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">severity_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceEvent.severity_level" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceSemaphores">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">WorkspaceSemaphores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**data:</span> <span class="pre">typing.Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceSemaphores" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#boardwalkd.protocol.ProtocolBaseModel" title="boardwalkd.protocol.ProtocolBaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boardwalkd.protocol.ProtocolBaseModel</span></code></a></p>
+<p>Model for server-side workspace semaphores</p>
+<p class="rubric">Initialization</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code class="docutils literal notranslate"><span class="pre">ValidationError</span></code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">self</span></code> is explicitly positional-only to allow <code class="docutils literal notranslate"><span class="pre">self</span></code> as a field name.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceSemaphores.caught">
+<span class="sig-name descname"><span class="pre">caught</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceSemaphores.caught" title="Link to this definition">#</a></dt>
+<dd><p>False</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceSemaphores.has_mutex">
+<span class="sig-name descname"><span class="pre">has_mutex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></em><a class="headerlink" href="#boardwalkd.protocol.WorkspaceSemaphores.has_mutex" title="Link to this definition">#</a></dt>
+<dd><p>False</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceNotFound">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">WorkspaceNotFound</span></span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceNotFound" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>The API doesn’t have this workspace</p>
+<p class="rubric">Initialization</p>
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceHasMutex">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">WorkspaceHasMutex</span></span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceHasMutex" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>The workspace is locked</p>
+<p class="rubric">Initialization</p>
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client" title="Link to this definition">#</a></dt>
+<dd><p>Boardwalkd protocol client</p>
+<p class="rubric">Initialization</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.get_api_token">
+<span class="sig-name descname"><span class="pre">get_api_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.Client.get_api_token" title="Link to this definition">#</a></dt>
+<dd><p>Retrieves the API token from disk</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.api_login">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">api_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.api_login" title="Link to this definition">#</a></dt>
+<dd><p>Performs an interactive login to the API and writes the session token
+to disk</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.authenticated_request">
+<span class="sig-name descname"><span class="pre">authenticated_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'GET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_login_prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://www.tornadoweb.org/en/stable/httpclient.html#tornado.httpclient.HTTPResponse" title="(in Tornado v6.4.1)"><span class="pre">tornado.httpclient.HTTPResponse</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.Client.authenticated_request" title="Link to this definition">#</a></dt>
+<dd><p>Performs an API request with authentication. By default, auto-prompts
+for authentication if auth fails</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_delete_mutex">
+<span class="sig-name descname"><span class="pre">workspace_delete_mutex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_delete_mutex" title="Link to this definition">#</a></dt>
+<dd><p>Deletes a workspace mutex</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_get_details">
+<span class="sig-name descname"><span class="pre">workspace_get_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceDetails" title="boardwalkd.protocol.WorkspaceDetails"><span class="pre">boardwalkd.protocol.WorkspaceDetails</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_get_details" title="Link to this definition">#</a></dt>
+<dd><p>Queries the server for workspace details</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_post_catch">
+<span class="sig-name descname"><span class="pre">workspace_post_catch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_post_catch" title="Link to this definition">#</a></dt>
+<dd><p>Posts a catch to the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_post_details">
+<span class="sig-name descname"><span class="pre">workspace_post_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceDetails" title="boardwalkd.protocol.WorkspaceDetails"><span class="pre">boardwalkd.protocol.WorkspaceDetails</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_post_details" title="Link to this definition">#</a></dt>
+<dd><p>Updates the workspace details at the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_post_heartbeat">
+<span class="sig-name descname"><span class="pre">workspace_post_heartbeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_post_heartbeat" title="Link to this definition">#</a></dt>
+<dd><p>Posts a heartbeat to the server. This method will not automatically
+prompt to re-login if there is an auth failure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_heartbeat_keepalive">
+<span class="sig-name descname"><span class="pre">workspace_heartbeat_keepalive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">quit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Event" title="(in Python v3.13)"><span class="pre">threading.Event</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_heartbeat_keepalive" title="Link to this definition">#</a></dt>
+<dd><p>Tries to post a heartbeat to the server every 5 seconds</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_heartbeat_keepalive_connect">
+<span class="sig-name descname"><span class="pre">workspace_heartbeat_keepalive_connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Event" title="(in Python v3.13)"><span class="pre">threading.Event</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_heartbeat_keepalive_connect" title="Link to this definition">#</a></dt>
+<dd><p>Starts a background thread to post heartbeats to the server so it
+knows when a client is alive</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_post_event">
+<span class="sig-name descname"><span class="pre">workspace_post_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceEvent" title="boardwalkd.protocol.WorkspaceEvent"><span class="pre">boardwalkd.protocol.WorkspaceEvent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_post_event" title="Link to this definition">#</a></dt>
+<dd><p>Sends a event to the server to be logged or broadcast</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_queue_event">
+<span class="sig-name descname"><span class="pre">workspace_queue_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceEvent" title="boardwalkd.protocol.WorkspaceEvent"><span class="pre">boardwalkd.protocol.WorkspaceEvent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_queue_event" title="Link to this definition">#</a></dt>
+<dd><p>Appends an event to the event queue and attempts to flush messages to
+the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.flush_event_queue">
+<span class="sig-name descname"><span class="pre">flush_event_queue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.flush_event_queue" title="Link to this definition">#</a></dt>
+<dd><p>Attempts to flush events to the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_post_mutex">
+<span class="sig-name descname"><span class="pre">workspace_post_mutex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_post_mutex" title="Link to this definition">#</a></dt>
+<dd><p>Posts a mutex to the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.Client.workspace_get_semaphores">
+<span class="sig-name descname"><span class="pre">workspace_get_semaphores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceSemaphores" title="boardwalkd.protocol.WorkspaceSemaphores"><span class="pre">boardwalkd.protocol.WorkspaceSemaphores</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.Client.workspace_get_semaphores" title="Link to this definition">#</a></dt>
+<dd><p>Queries the server for workspace semaphores</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boardwalkd.protocol.</span></span><span class="sig-name descname"><span class="pre">WorkspaceClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#boardwalkd.protocol.Client" title="boardwalkd.protocol.Client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boardwalkd.protocol.Client</span></code></a></p>
+<p>Subclass of the Boardwalkd protocol client with the Workspace name
+pre-initialized</p>
+<p class="rubric">Initialization</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.get_semaphores">
+<span class="sig-name descname"><span class="pre">get_semaphores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceSemaphores" title="boardwalkd.protocol.WorkspaceSemaphores"><span class="pre">boardwalkd.protocol.WorkspaceSemaphores</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.get_semaphores" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.has_mutex">
+<span class="sig-name descname"><span class="pre">has_mutex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.has_mutex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.post_catch">
+<span class="sig-name descname"><span class="pre">post_catch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.post_catch" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.caught">
+<span class="sig-name descname"><span class="pre">caught</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.caught" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.heartbeat_keepalive_connect">
+<span class="sig-name descname"><span class="pre">heartbeat_keepalive_connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.heartbeat_keepalive_connect" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.mutex">
+<span class="sig-name descname"><span class="pre">mutex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.mutex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.post_details">
+<span class="sig-name descname"><span class="pre">post_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceDetails" title="boardwalkd.protocol.WorkspaceDetails"><span class="pre">boardwalkd.protocol.WorkspaceDetails</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.post_details" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.post_heartbeat">
+<span class="sig-name descname"><span class="pre">post_heartbeat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.post_heartbeat" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.post_event">
+<span class="sig-name descname"><span class="pre">post_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceEvent" title="boardwalkd.protocol.WorkspaceEvent"><span class="pre">boardwalkd.protocol.WorkspaceEvent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.post_event" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.queue_event">
+<span class="sig-name descname"><span class="pre">queue_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#boardwalkd.protocol.WorkspaceEvent" title="boardwalkd.protocol.WorkspaceEvent"><span class="pre">boardwalkd.protocol.WorkspaceEvent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.queue_event" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boardwalkd.protocol.WorkspaceClient.unmutex">
+<span class="sig-name descname"><span class="pre">unmutex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boardwalkd.protocol.WorkspaceClient.unmutex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="boardwalkd.cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.cli</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="boardwalkd.__main__.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.__main__</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ProtocolBaseModel"><code class="docutils literal notranslate"><span class="pre">ProtocolBaseModel</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ApiLoginMessage"><code class="docutils literal notranslate"><span class="pre">ApiLoginMessage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ApiLoginMessage.login_url"><code class="docutils literal notranslate"><span class="pre">ApiLoginMessage.login_url</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.ApiLoginMessage.token"><code class="docutils literal notranslate"><span class="pre">ApiLoginMessage.token</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.host_pattern"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.host_pattern</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.workflow"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.workflow</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_command"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_command</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_hostname"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_hostname</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_limit"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_limit</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceDetails.worker_username"><code class="docutils literal notranslate"><span class="pre">WorkspaceDetails.worker_username</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.message"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.message</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.severity"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.severity</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.create_time"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.create_time</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.received_time"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.received_time</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceEvent.severity_level"><code class="docutils literal notranslate"><span class="pre">WorkspaceEvent.severity_level()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceSemaphores"><code class="docutils literal notranslate"><span class="pre">WorkspaceSemaphores</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceSemaphores.caught"><code class="docutils literal notranslate"><span class="pre">WorkspaceSemaphores.caught</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceSemaphores.has_mutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceSemaphores.has_mutex</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceNotFound"><code class="docutils literal notranslate"><span class="pre">WorkspaceNotFound</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceHasMutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceHasMutex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.get_api_token"><code class="docutils literal notranslate"><span class="pre">Client.get_api_token()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.api_login"><code class="docutils literal notranslate"><span class="pre">Client.api_login()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.authenticated_request"><code class="docutils literal notranslate"><span class="pre">Client.authenticated_request()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_delete_mutex"><code class="docutils literal notranslate"><span class="pre">Client.workspace_delete_mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_get_details"><code class="docutils literal notranslate"><span class="pre">Client.workspace_get_details()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_catch"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_catch()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_details"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_details()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_heartbeat"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_heartbeat()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_heartbeat_keepalive"><code class="docutils literal notranslate"><span class="pre">Client.workspace_heartbeat_keepalive()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_heartbeat_keepalive_connect"><code class="docutils literal notranslate"><span class="pre">Client.workspace_heartbeat_keepalive_connect()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_event"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_queue_event"><code class="docutils literal notranslate"><span class="pre">Client.workspace_queue_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.flush_event_queue"><code class="docutils literal notranslate"><span class="pre">Client.flush_event_queue()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_post_mutex"><code class="docutils literal notranslate"><span class="pre">Client.workspace_post_mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.Client.workspace_get_semaphores"><code class="docutils literal notranslate"><span class="pre">Client.workspace_get_semaphores()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.get_semaphores"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.get_semaphores()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.has_mutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.has_mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_catch"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_catch()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.caught"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.caught()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.heartbeat_keepalive_connect"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.heartbeat_keepalive_connect()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.mutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.mutex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_details"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_details()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_heartbeat"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_heartbeat()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.post_event"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.post_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.queue_event"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.queue_event()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd.protocol.WorkspaceClient.unmutex"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient.unmutex()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Backblaze
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Backblaze.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Nov 08, 2024.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  
+    <div>Documentation generated with commit <span onclick="navigator.clipboard.writeText('c50de1fe628b3cbfad142186c8afac78067f9de4')" title="c50de1fe628b3cbfad142186c8afac78067f9de4">c50de1f</span></div>
+    
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

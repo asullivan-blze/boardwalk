@@ -1,0 +1,1159 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Overview &#8212; Boardwalk v0.8.24 (c50de1f)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=50a4e793"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'overview';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Boardwalk" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.8.24" />
+    <meta name="docbuild:last-update" content="Nov 08, 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/boardwalk_icon.jpg" class="logo__image only-light" alt="Boardwalk documentation - Home"/>
+    <img src="_static/boardwalk_icon.jpg" class="logo__image only-dark pst-js-only" alt="Boardwalk documentation - Home"/>
+  
+  
+    <p class="title logo__title">Boardwalk, a linear Ansible workflow engine <br /><sub>v0.8.24</sub></p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Boardwalk
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Command-line applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="cli_helpdocs/index.html">Command-line help reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="cli_helpdocs/boardwalk/index.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_catch.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">catch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_check.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">check</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_init.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_login.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">login</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_release.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">release</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_run.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">run</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_version.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">version</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_dump.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">dump</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_list.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_reset.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">reset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_show.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">show</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalk/boardwalk_workspace_use.html"><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">use</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="cli_helpdocs/boardwalkd/index.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalkd/boardwalkd.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalkd/boardwalkd_serve.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">serve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cli_helpdocs/boardwalkd/boardwalkd_version.html"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">version</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="apidocs/index.html">Auto-generated API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="apidocs/boardwalk/boardwalk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_workspace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_workspace</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.app_exceptions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.app_exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_run.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_run</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.state.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.manifest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.manifest</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.ansible.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.ansible</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_catch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_catch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.host.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.host</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.__main__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_init.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_init</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalk/boardwalk.cli_login.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalk.cli_login</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd</span></code></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.server.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.state.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.state</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.slack.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.slack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.broadcast.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.broadcast</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.cli</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.protocol.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.protocol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="apidocs/boardwalkd/boardwalkd.__main__.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">boardwalkd.__main__</span></code></a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/blob/main/docs/overview.md?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/edit/main/docs/overview.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Backblaze/boardwalk/issues/new?title=Issue%20on%20page%20%2Foverview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/overview.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-goals">Motivation &amp; Goals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-goals">Non-Goals</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shell-completion">Shell Completion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash">Bash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zsh">Zsh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fish">Fish</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#container-install">Container Install</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-license">Open-Source License</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workspace">Workspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jobs">Jobs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-preconditions">Job Preconditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-state">Local State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-state">Remote State</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boardwalkfile-py">The <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-boardwalkfile-py">Example <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface">Command-line Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansible-configuration-options">Ansible Configuration &amp; Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansible-fact-cache">Ansible Fact Cache</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansible-performance">Ansible Performance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-vars">Automatic Vars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd-server"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> Server</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catch-release-behavior-with-boardwalkd">Catch &amp; Release Behavior With Boardwalkd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd-database-storage-and-persistence">Boardwalkd Database Storage and Persistence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="motivation-goals">
+<h1>Motivation &amp; Goals<a class="headerlink" href="#motivation-goals" title="Link to this heading">#</a></h1>
+<p>Ansible is already a very capable agentless, modular, remote execution engine.
+It uses task playbooks that are easy to read and run against any number of
+hosts, in parallel or in serial. However, Ansible is connection-oriented: most
+operations are performed on remote hosts. Ansible connects to a host, copies
+code over, and executes it. There’s no practical interface to perform
+calculations about a host before the host is contacted. This makes long-running
+background jobs difficult to work with using Ansible alone. For example, if a
+playbook is running for days or weeks and fails, Ansible doesn’t retain any
+knowledge of where it left off, and can’t make any offline calculations about
+which hosts it needs to finish up with. When the playbook is re-run, Ansible
+will attempt to connect to all the hosts it had previously connected to,
+potentially resulting in a long recovery time for a failed job. And this makes
+sense: <strong>Ansible is primarily a remote execution engine, and not a workflow
+engine</strong>. A workflow engine wrapping Ansible can do calculations and state
+management beyond what Ansible is designed for.</p>
+<p>Boardwalk is implemented as a workflow engine to run jobs that wrap Ansible
+tasks. It’s specifically aimed towards long-running, low-and-slow, rolling
+Ansible workflows. It interfaces with Ansible via
+<a class="reference external" href="https://github.com/ansible/ansible-runner">ansible-runner</a>, which is the same
+interface used by <a class="reference external" href="https://github.com/ansible/awx">AWX</a>.</p>
+<section id="non-goals">
+<h2>Non-Goals<a class="headerlink" href="#non-goals" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>⛔️ Be a scheduler. Boardwalk doesn’t need to solve the problems that cron,
+systemd timers or other schedulers do. Boardwalk does have primitives for
+locking/mutexes to prevent overlapping operations, however.</p></li>
+<li><p>⛔️ Reproduce features of Ansible. As much as possible, Boardwalk should not
+reproduce core features of Ansible. Boardwalk doesn’t need its own modular
+task execution system because it can interface with Ansible for that.
+Boardwalk shouldn’t create its own inventory system, nor should it create its
+own secret management system, because Ansible already has solutions to those
+areas.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<!-- README.md_Installation_Section_Before -->
+<p>We recommend installing <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> in a <a class="reference external" href="https://pipx.pypa.io/stable/"><code class="docutils literal notranslate"><span class="pre">pipx</span></code></a>
+environment, to ensure that your system or user pip packages are not affected by
+Boardwalk’s dependencies. Refer to <code class="docutils literal notranslate"><span class="pre">pipx</span></code>’s documentation for how to install it,
+and then execute the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boardwalk depends on `ansible` in order to run.</span>
+pipx<span class="w"> </span>install<span class="w"> </span>ansible&gt;<span class="o">=</span><span class="m">6</span>.5.0
+<span class="c1"># Inject Boardwalk into the environment so it can use Ansible. Optionally,</span>
+<span class="c1"># appending an @&lt;git reference&gt; allows for installing specific commits,</span>
+<span class="c1"># branches, or tags.</span>
+pipx<span class="w"> </span>inject<span class="w"> </span>ansible<span class="w"> </span>git+ssh://git@github.com/Backblaze/boardwalk.git
+</pre></div>
+</div>
+<p><strong>Note</strong>:
+Boardwalk should be designed to be compatible with the current stable Python3
+release, minus 1 minor version. So, if the current stable version is <code class="docutils literal notranslate"><span class="pre">3.22.x</span></code>,
+Boardwalk should work with <code class="docutils literal notranslate"><span class="pre">3.21.x</span></code>. Consider using
+<a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> to maintain fresh python environment.</p>
+<section id="shell-completion">
+<h2>Shell Completion<a class="headerlink" href="#shell-completion" title="Link to this heading">#</a></h2>
+<p>To enable shell completion for <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> and <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>, the following set
+of commands will generate the completion script and add them to your shell (a
+shell restart will be needed):</p>
+<section id="bash">
+<h3>Bash<a class="headerlink" href="#bash" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">_BOARDWALK_COMPLETE</span><span class="o">=</span>bash_source<span class="w"> </span>boardwalk<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalk-complete.bash
+<span class="nv">_BOARDWALKD_COMPLETE</span><span class="o">=</span>bash_source<span class="w"> </span>boardwalkd<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalkd-complete.bash
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalk-complete.bash&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalkd-complete.bash&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</section>
+<section id="zsh">
+<h3>Zsh<a class="headerlink" href="#zsh" title="Link to this heading">#</a></h3>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="nv">_BOARDWALK_COMPLETE</span><span class="o">=</span>zsh_source<span class="w"> </span>boardwalk<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalk-complete.zsh
+<span class="nv">_BOARDWALKD_COMPLETE</span><span class="o">=</span>zsh_source<span class="w"> </span>boardwalkd<span class="w"> </span>&gt;<span class="w"> </span>~/.boardwalkd-complete.zsh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalk-complete.zsh&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;. ~/.boardwalkd-complete.zsh&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
+</section>
+<section id="fish">
+<h3>Fish<a class="headerlink" href="#fish" title="Link to this heading">#</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">_BOARDWALK_COMPLETE</span><span class="o">=</span>fish_source<span class="w"> </span>boardwalk<span class="w"> </span>&gt;<span class="w"> </span>~/.config/fish/completions/boardwalk.fish
+<span class="nv">_BOARDWALKD_COMPLETE</span><span class="o">=</span>fish_source<span class="w"> </span>boardwalkd<span class="w"> </span>&gt;<span class="w"> </span>~/.config/fish/completions/boardwalkd.fish
+</pre></div>
+</div>
+</section>
+</section>
+<section id="container-install">
+<h2>Container Install<a class="headerlink" href="#container-install" title="Link to this heading">#</a></h2>
+<p>Boardwalk may be built as a container image by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">container</span></code>.</p>
+<p>The entrypoint is simply <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code> so either <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> or <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>
+must be specified as the command when running.</p>
+<!-- README.md_Installation_Section_After -->
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="open-source-license">
+<h1>Open-Source License<a class="headerlink" href="#open-source-license" title="Link to this heading">#</a></h1>
+<p>Boardwalk is open source, licensed under the terms of the <a class="reference external" href="https://github.com/Backblaze/boardwalk/blob/main/LICENSE">MIT license</a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h1>
+<p>See <a class="reference external" href="https://github.com/Backblaze/boardwalk/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h1>
+<img alt="Boardwalk can use multiple Workspaces. Each Workspace has exactly one Workflow, while each Workflow has at least one Job associated with it. If multiple Jobs exist in a Workflow, they are executed in sequence." src="diagrams/conceptual_overview.png" />
+<section id="workspace">
+<h2>Workspace<a class="headerlink" href="#workspace" title="Link to this heading">#</a></h2>
+<p>Workspaces define isolated configurations and state for working on projects with
+Boardwalk. They define the Ansible host pattern Boardwalk should target, the
+Workflow Boardwalk will use, and some essential configuration options.</p>
+<p>Workspaces are defined in the <a class="reference internal" href="#the-boardwalkfilepy">Boardwalkfile.py</a>. The
+active Workspace is selected with <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">use</span> <span class="pre">&lt;workspace</span> <span class="pre">name&gt;</span></code>.</p>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<p>Every Workspace specifies a Workflow. Workflows are the set of Jobs that will be
+run against hosts in the Workspace. They define the Jobs, Jobs options, and the
+order in which Jobs are run. Jobs are run in series, one after another. The
+purpose of a Workflow is to mutate a host from one state to another. Typically
+Workflows depend upon some Ansible fact(s) having changed after the Workflow has
+completed all of its Jobs.</p>
+<p>Workflows are defined in the <a class="reference internal" href="#the-boardwalkfilepy">Boardwalkfile.py</a>.
+Workflows can be dry-run with <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">check</span></code>, which runs Ansible in <code class="docutils literal notranslate"><span class="pre">--check</span></code>
+mode. Workflows are run with <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">run</span></code>.</p>
+</section>
+<section id="jobs">
+<h2>Jobs<a class="headerlink" href="#jobs" title="Link to this heading">#</a></h2>
+<p>Jobs define what is actually executed in a Workflow. They define Ansible tasks
+that are run against hosts. They accept options that can be passed into them and
+used in tasks. They define preconditions that a host must meet before a Workflow
+will run against it.</p>
+<p>Jobs are defined in the <a class="reference internal" href="#the-boardwalkfilepy">Boardwalkfile.py</a>.</p>
+<section id="job-preconditions">
+<h3>Job Preconditions<a class="headerlink" href="#job-preconditions" title="Link to this heading">#</a></h3>
+<p>Preconditions are an important feature of Boardwalk Jobs; they are the mechanism
+indicating to Boardwalk whether a Workflow needs to be run on a host. When used
+effectively, <strong>Preconditions are the feature that allows Boardwalk to skip hosts
+that it does not need to act upon or has already acted upon and completed.</strong></p>
+<p>Preconditions are simply a Python boolean expression that return True or False.
+Generally the preconditions are based upon Ansible facts and vars, but they may
+consider anything that the execution environment has access to. Workflows
+consider the preconditions of <em>all</em> Jobs in the Workflow. If <em>any</em> Job
+preconditions are not True, the host the Workflow is acting upon will be skipped
+unless the workflow had already started but never completed.</p>
+<p>Both facts and variables from the inventory may be used in preconditions. Facts
+must be gathered from hosts using <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code>, but inventory vars are
+processed at runtime when <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">check</span></code> or <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">run</span></code> is used.
+Inventory vars may contain <a class="reference external" href="https://jinja.palletsprojects.com/">Jinja</a>
+expressions, and Boardwalk does not process them.</p>
+<p>Boardwalk will ignore preconditions for hosts where a Workflow was started but
+never finished. Boardwalk automatically assumes the host did originally meet
+preconditions but still needs the Workflow to complete. This behavior merits
+some important considerations. If a host has started a Workflow, but never
+finished, preconditions are ignored even if the preconditions or Workflow Jobs
+have changed. Thus, it’s very important not to rely on preconditions alone for
+safety. Additional safety checks should be included in the Ansible tasks run by
+Jobs.</p>
+</section>
+</section>
+<section id="local-state">
+<h2>Local State<a class="headerlink" href="#local-state" title="Link to this heading">#</a></h2>
+<p>Boardwalk maintains a local “statefile” for each Workspace. The primary data
+contained in the local state are Ansible facts associated with hosts. Inventory
+vars are not stored in the statefile because they are processed at runtime.</p>
+<p>The state is initially built using <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code>, and Workflows update the
+state with fresh Ansible facts as hosts are completed. The local state can be
+reset with <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">workspace</span> <span class="pre">reset</span></code>.</p>
+</section>
+<section id="remote-state">
+<h2>Remote State<a class="headerlink" href="#remote-state" title="Link to this heading">#</a></h2>
+<p>Boardwalk maintains a remote statefile on each host in
+<code class="docutils literal notranslate"><span class="pre">/etc/ansible/facts.d/boardwalk_state</span></code>. This file is used internally by
+Boardwalk.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
+<section id="the-boardwalkfile-py">
+<span id="the-boardwalkfilepy"></span><h2>The <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code><a class="headerlink" href="#the-boardwalkfile-py" title="Link to this heading">#</a></h2>
+<p>Boardwalk is both a python library and command-line tool. The <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code>
+command-line tool expects a file called <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code> to exist in the
+current working directory where it’s run. The <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code> defines what
+Workspaces, Workflows, and Jobs are available for use and how they are used.</p>
+<section id="example-boardwalkfile-py">
+<h3>Example <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code><a class="headerlink" href="#example-boardwalkfile-py" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">In this example, we define a Workspace, Workflow, and Jobs for performing</span>
+<span class="sd">OS upgrades for storage pods in the staging environment</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Imports the boardwalk module and classes used in the Boardwalkfile.py</span>
+<span class="kn">from</span> <span class="nn">boardwalk</span> <span class="kn">import</span> <span class="n">TaskJob</span><span class="p">,</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">WorkflowConfig</span><span class="p">,</span> <span class="n">Workspace</span><span class="p">,</span> <span class="n">WorkspaceConfig</span><span class="p">,</span> <span class="n">path</span>
+
+<span class="c1"># Optionally sets the URL to a boardwalkd server</span>
+<span class="n">boardwalkd_url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8888&quot;</span>
+
+<span class="c1"># Defines a Workspace with the name &quot;StagingPodDistUpgrades&quot;</span>
+<span class="k">class</span> <span class="nc">StagingPodDistUpgrades</span><span class="p">(</span><span class="n">Workspace</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Workspaces have a required &quot;config&quot; method that returns a WorkspaceConfig</span>
+<span class="sd">    object. The WorkspaceConfig defines essential options. Some options have</span>
+<span class="sd">    defaults. Currently, the best way to see what options are available, which</span>
+<span class="sd">    are required, and what details are set to is to use a Python IDE</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">WorkspaceConfig</span><span class="p">(</span>
+            <span class="c1"># Required. Defines the Ansible host pattern</span>
+            <span class="n">host_pattern</span><span class="o">=</span><span class="s2">&quot;staging:&amp;pod&quot;</span><span class="p">,</span>
+            <span class="c1"># Required. Defines the Workflow to use</span>
+            <span class="n">workflow</span><span class="o">=</span><span class="n">PodDistUpgradeWorkflow</span><span class="p">(),</span>
+            <span class="c1"># Optional. Defines the default ordering Boardwalk will use to walk</span>
+            <span class="c1"># through hosts, based upon hostname. See `boardwalk run --help` for</span>
+            <span class="c1"># available options</span>
+            <span class="n">default_sort_order</span><span class="o">=</span><span class="s2">&quot;shuffle&quot;</span>
+        <span class="p">)</span>
+
+
+<span class="c1"># Defines a Workflow with the name &quot;PodDistUpgradeWorkflow&quot;, referenced by the</span>
+<span class="c1"># StagingPodDistUpgrades Workspace</span>
+<span class="k">class</span> <span class="nc">PodDistUpgradeWorkflow</span><span class="p">(</span><span class="n">Workflow</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Workflows have a required &quot;jobs&quot; method that returns a tuple of Jobs. Jobs</span>
+<span class="sd">    in the Workflow are executed in the order defined here. This is where</span>
+<span class="sd">    options are provided to Jobs (if any)</span>
+
+<span class="sd">    There is also an optional exit_jobs method, which is the same as this method</span>
+<span class="sd">    except that the Jobs returned by exit_jobs are run after regular Jobs, and</span>
+<span class="sd">    they are always attempted, even upon failure</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">PodPreTasksJob</span><span class="p">(),</span>
+            <span class="n">DistUpgradeJob</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;target_version&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}),</span>
+            <span class="n">PodPostTasksJob</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Optional workflow configuration options may be specified. The example below</span>
+<span class="sd">    changes Boardwalk&#39;s default behavior. Normally, Boardwalk will always retry</span>
+<span class="sd">    workflows on failed hosts until they complete the workflow successfully at</span>
+<span class="sd">    least once, even if they no longer meet Job preconditions. This example</span>
+<span class="sd">    disables this behavior</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">WorkflowConfig</span><span class="p">(</span><span class="n">always_retry_failed_hosts</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="c1"># Defines a TaskJob with the name &quot;PodPreTasksJob&quot;, which is called in the</span>
+<span class="c1"># PodDistUpgradeWorkflow Workflow as the first Job</span>
+<span class="k">class</span> <span class="nc">PodPreTasksJob</span><span class="p">(</span><span class="n">TaskJob</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Jobs have an optional &quot;tasks&quot; method that returns a list of Ansible tasks.</span>
+<span class="sd">    The format for tasks is structurally the same as Ansible tasks defined using</span>
+<span class="sd">    YAML, but they must be formatted as a list of Python dictionaries as shown</span>
+
+<span class="sd">    The path() function used here as an example is an important helper for cases</span>
+<span class="sd">    where local paths are reference on the controller running Boardwalk. The</span>
+<span class="sd">    underlying interface Boardwalk uses for Ansible dynamically renders a</span>
+<span class="sd">    playbook to a temporary file outside of the working directory. The path()</span>
+<span class="sd">    function translates relative paths to absolute paths so the generated</span>
+<span class="sd">    playbook is able to locate referenced file paths</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[{</span><span class="s2">&quot;import_tasks&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">&quot;dist_upgrade/pod_pre_tasks.yml&quot;</span><span class="p">)}]</span>
+
+<span class="c1"># Defines a TaskJob with the name &quot;DistUpgradeJob&quot;, which is called in the</span>
+<span class="c1"># PodDistUpgradeWorkflow Workflow as the second Job</span>
+<span class="k">class</span> <span class="nc">DistUpgradeJob</span><span class="p">(</span><span class="n">TaskJob</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Jobs have an optional &quot;required_options&quot; method that returns either a string</span>
+<span class="sd">    or tuple of strings. The return value specifies options that can be passed</span>
+<span class="sd">    into the Job class, via the &quot;options&quot; argument, as a dict. Options being</span>
+<span class="sd">    passed into this Job can be seen in the PodDistUpgradeWorkflow class above.</span>
+<span class="sd">    Options specified here will be required, and an exception will be raised</span>
+<span class="sd">    if they are missing when called by a Workflow</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">required_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;target_version&quot;</span>  <span class="c1"># This is the major Debian version to upgrade to</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Jobs also have an optional &quot;preconditions&quot; method that returns either True</span>
+<span class="sd">    or False. The purpose of this method is to determine whether or not a Job</span>
+<span class="sd">    should be run on a given host. Ansible facts and vars for the hosts a Job</span>
+<span class="sd">    will work on are passed into this method so they can be considered. Notice</span>
+<span class="sd">    the usage of facts, inventory_vars, and options here</span>
+
+<span class="sd">    In this example the expression says &quot;If the linux distribution is Debian and</span>
+<span class="sd">    the Debian version is less than the target_version, and there is no</span>
+<span class="sd">    do_not_upgrade variable set by the inventory, then return True, else</span>
+<span class="sd">    return False&quot;</span>
+
+<span class="sd">    Note that preconditions can exist for a Job without any tasks. This may be</span>
+<span class="sd">    useful for cases where a Workflow should have additional preconditions</span>
+
+<span class="sd">    By default, preconditions are ignored if a workflow has started on a host</span>
+<span class="sd">    but never completed. This behavior may be changed as described in the</span>
+<span class="sd">    Workflow class above</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">preconditions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">facts</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">inventory_vars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">facts</span><span class="p">[</span><span class="s2">&quot;ansible_distribution&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Debian&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">facts</span><span class="p">[</span><span class="s2">&quot;ansible_distribution_major_version&quot;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;target_version&quot;</span><span class="p">]))</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="s2">&quot;do_not_upgrade&quot;</span> <span class="ow">in</span> <span class="n">inventory_vars</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This example of the tasks method shows a way of passing an option from the</span>
+<span class="sd">    Job class into the underlying Ansible tasks by using set_fact</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;set_fact&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;target_debian_version&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;target_version&quot;</span><span class="p">]}},</span>
+            <span class="p">{</span><span class="s2">&quot;import_tasks&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">&quot;dist_upgrade/main.yml&quot;</span><span class="p">)},</span>
+        <span class="p">]</span>
+
+<span class="c1"># Defines a TaskJob with the name &quot;PodPostTasksJob&quot;, which is called in the</span>
+<span class="c1"># PodDistUpgradeWorkflow Workflow as the last Job</span>
+<span class="k">class</span> <span class="nc">PodPostTasksJob</span><span class="p">(</span><span class="n">TaskJob</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;import_tasks&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">&quot;dist_upgrade/pod_post_tasks.yml&quot;</span><span class="p">)}</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="command-line-interface">
+<h2>Command-line Interface<a class="headerlink" href="#command-line-interface" title="Link to this heading">#</a></h2>
+<p>Once you have a <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code>, <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> can be used to run workflows. The
+example command-line usage below is using the <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code> example above.
+Not all subcommands and options are listed here. Explore <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">--help</span></code> for
+more.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the same directory as the Boardwalkfile.py...</span>
+<span class="c1"># List workspaces to see what&#39;s available:</span>
+boardwalk<span class="w"> </span>workspace<span class="w"> </span>list
+
+<span class="c1"># Select the available workspace:</span>
+boardwalk<span class="w"> </span>workspace<span class="w"> </span>use<span class="w"> </span>StagingPodDistUpgrades
+
+<span class="c1"># Initialize the local state. This will run Ansible fact gathering against</span>
+<span class="c1"># all of the hosts matching the host_pattern configured for the workspace:</span>
+boardwalk<span class="w"> </span>init
+
+<span class="c1"># Check that the workflow is working as expected. This checks Job preconditions</span>
+<span class="c1"># and runs the Ansible tasks defined in Jobs in --check mode:</span>
+boardwalk<span class="w"> </span>check
+
+<span class="c1"># If everything looks good, run the workflow:</span>
+boardwalk<span class="w"> </span>run
+
+<span class="c1"># In another terminal (in the same directory) you can catch execution _locally_</span>
+<span class="c1"># if needed. This will pause the execution of the workflow before starting the</span>
+<span class="c1"># next host:</span>
+boardwalk<span class="w"> </span>catch
+
+<span class="c1"># ... and this will resume the workflow if it has been _locally_ caught:</span>
+boardwalk<span class="w"> </span>release
+
+<span class="c1"># boardwalk also has command-line help:</span>
+boardwalk<span class="w"> </span>--help
+
+<span class="c1"># boardwalk&#39;s subcommands also have help. For example:</span>
+boardwalk<span class="w"> </span>workspace<span class="w"> </span>--help
+</pre></div>
+</div>
+</section>
+<section id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BOARDWALK_WORKSPACE</span></code>: When set, Boardwalk will use the value as the Workspace
+in use. This allows the tool to run against multiple Workspaces at the same
+time from the same working directory.</p></li>
+</ul>
+</section>
+<section id="ansible-configuration-options">
+<h2>Ansible Configuration &amp; Options<a class="headerlink" href="#ansible-configuration-options" title="Link to this heading">#</a></h2>
+<p>Ansible, when run inside Boardwalk, will use almost the exact same configuration
+as any Ansible commands will use outside of Boardwalk. The only differences are:</p>
+<ul class="simple">
+<li><p>Boardwalk will force using its own fact cache</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code> will timeout hosts after 5 minutes</p></li>
+</ul>
+<p>Boardwalk doesn’t support all the command-line flags for <code class="docutils literal notranslate"><span class="pre">ansible-playbook</span></code>,
+such as the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option and others. Ansible options must be configured via <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/config.html">an
+ansible.cfg</a>
+and/or <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/config.html">environment
+variables</a>.</p>
+<section id="ansible-fact-cache">
+<h3>Ansible Fact Cache<a class="headerlink" href="#ansible-fact-cache" title="Link to this heading">#</a></h3>
+<p>Boardwalk maintains a fact cache per-workspace. The fact cache is populated for
+all hosts in a workspace during <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code>, and for each individual host
+as a Workflow runs. If <code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code> hasn’t been run in a long time, it may
+have stale data about hosts in the workspace.</p>
+</section>
+<section id="ansible-performance">
+<h3>Ansible Performance<a class="headerlink" href="#ansible-performance" title="Link to this heading">#</a></h3>
+<p>Some optimal configuration settings are recommended. Ansible settings below are
+shown as environment variables here, but they may also be provided in an
+<code class="docutils literal notranslate"><span class="pre">ansible.cfg</span></code> or via other usual means:</p>
+<p>Boardwalk frequently connects and disconnects from hosts during normal
+operation. In order to reduce the overhead of this behavior, it’s a good idea to
+enable persistent connections, which temporarily keeps a control socket open to
+remote hosts:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ANSIBLE_USE_PERSISTENT_CONNECTIONS</span><span class="o">=</span>True
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSIBLE_PERSISTENT_CONNECT_TIMEOUT</span><span class="o">=</span><span class="m">60</span><span class="w"> </span><span class="c1"># Or higher...</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">boardwalk</span> <span class="pre">init</span></code>, connects to all hosts matching the active Workspace’s host
+pattern to gather facts. Speeding up <code class="docutils literal notranslate"><span class="pre">init</span></code> requires the same kind of
+optimizations that would normally be expected for running Ansible playbooks
+against large numbers of hosts: <code class="docutils literal notranslate"><span class="pre">ANSIBLE_FORKS</span></code> should be set to as high a value
+as the controller can handle. Maximizing <code class="docutils literal notranslate"><span class="pre">ANSIBLE_FORKS</span></code> depends upon the
+controller’s CPU, memory, and open files limits.</p>
+</section>
+</section>
+<section id="automatic-vars">
+<h2>Automatic Vars<a class="headerlink" href="#automatic-vars" title="Link to this heading">#</a></h2>
+<p>Boardwalk injects a boolean variable into Ansible operations,
+<code class="docutils literal notranslate"><span class="pre">boardwalk_operation</span></code>. This variable is always <code class="docutils literal notranslate"><span class="pre">True</span></code> when Ansible is being run
+by Boardwalk.</p>
+</section>
+<section id="boardwalkd-server">
+<h2><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> Server<a class="headerlink" href="#boardwalkd-server" title="Link to this heading">#</a></h2>
+<p>Boardwalk is bundled along with <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>, which is a central network server
+that Boardwalk can coordinate with. By specifying <code class="docutils literal notranslate"><span class="pre">boardwalkd_url</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code>, <code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> instances become referred to as “workers”.
+Boardwalk will use the server for several purposes: It enables Boardwalk to:</p>
+<ul class="simple">
+<li><p>Ensure Workspaces are only running in one place, by “locking” Workspaces on
+the server.</p></li>
+<li><p>Allows operators to catch/release Workflows from a UI.</p></li>
+<li><p>Displays Workspaces in a UI with status updates and worker details.</p></li>
+<li><p>Allows posting status updates to a Slack webhook.</p></li>
+</ul>
+<p>See <code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">serve</span> <span class="pre">--help</span></code> for options to run the server.</p>
+<section id="architecture">
+<h3>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
+<p>In the diagram and descriptions below, the word “worker” refers to the
+<code class="docutils literal notranslate"><span class="pre">boardwalk</span></code> CLI when it is connected to <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>.</p>
+<img alt="A diagram showing the relationship between boardwalkd, boardwalk workers, and managed hosts. A single boardwalkd server exists, to which one or more workers may connect (reference items 1 and 2 in the Key). Each worker operates on a specific set of hosts (reference item 3 in the Key)." src="diagrams/architecture.png" />
+<blockquote>
+<div><p class="rubric" id="key">Key</p>
+<p>(1) Worker details, Workspace data, Workflow events,
+heartbeats sent from workers to boardwalkd over HTTP(S).</p>
+<p>(2) Workers poll boardwalkd over HTTP(S) for semaphores including Workspace
+mutexes and Workspace catches.</p>
+<p>(3) Workers connect directly to hosts over SSH.</p>
+</div></blockquote>
+</section>
+<section id="catch-release-behavior-with-boardwalkd">
+<h3>Catch &amp; Release Behavior With Boardwalkd<a class="headerlink" href="#catch-release-behavior-with-boardwalkd" title="Link to this heading">#</a></h3>
+<p>When Boardwalk encounters an error on a host, it will automatically catch the
+workspace. When a <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> server is configured, automatic catching of
+Workspaces will occur on the remote server rather than locally. It’s still
+possible to perform a local catch/release even when connected to <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>,
+and local catches cannot be released from the server UI. If Boardwalk encounters
+an error and for any reason it cannot catch the Workspace on the server, it will
+fall back to catching locally.</p>
+</section>
+<section id="boardwalkd-database-storage-and-persistence">
+<h3>Boardwalkd Database Storage and Persistence<a class="headerlink" href="#boardwalkd-database-storage-and-persistence" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> uses a single JSON file to save state. The JSON file is flushed to
+the working directory of the server, in <code class="docutils literal notranslate"><span class="pre">.boardwalkd/statefile.json</span></code></p>
+</section>
+<section id="security">
+<h3>Security<a class="headerlink" href="#security" title="Link to this heading">#</a></h3>
+<p><strong>Authentication</strong>: By default, <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> uses anonymous authentication. It’s
+important that an authentication method be configured. See
+<code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">serve</span> <span class="pre">--help</span></code> for available options.</p>
+<p><strong>TLS</strong>: <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> supports TLS termination. See <code class="docutils literal notranslate"><span class="pre">boardwalkd</span> <span class="pre">serve</span> <span class="pre">--help</span></code></p>
+<p><strong>No access to hosts</strong>: <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> is not involved in managing hosts; only
+CLI workers require direct access to hosts.</p>
+<p><strong>Limited control of workers</strong>: CLI workers poll <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> for Workspace
+mutexes and catches to determine if operations may proceed or should halt. This
+is the full extent of control <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> has over worker behavior.</p>
+<p><strong>Limited information disclosure from workers</strong>: CLI workers emit limited
+details about the worker and workflow events to <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code>. When workers
+encounter an Ansible task error, the failed task’s name and module name are sent
+to <code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> as part of an event, but do not contain the full error output.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Boardwalk</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="installation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-goals">Motivation &amp; Goals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-goals">Non-Goals</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shell-completion">Shell Completion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bash">Bash</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zsh">Zsh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fish">Fish</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#container-install">Container Install</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-license">Open-Source License</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workspace">Workspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jobs">Jobs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#job-preconditions">Job Preconditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-state">Local State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-state">Remote State</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boardwalkfile-py">The <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-boardwalkfile-py">Example <code class="docutils literal notranslate"><span class="pre">Boardwalkfile.py</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface">Command-line Interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansible-configuration-options">Ansible Configuration &amp; Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansible-fact-cache">Ansible Fact Cache</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansible-performance">Ansible Performance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-vars">Automatic Vars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd-server"><code class="docutils literal notranslate"><span class="pre">boardwalkd</span></code> Server</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catch-release-behavior-with-boardwalkd">Catch &amp; Release Behavior With Boardwalkd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boardwalkd-database-storage-and-persistence">Boardwalkd Database Storage and Persistence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Backblaze
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Backblaze.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Nov 08, 2024.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  
+    <div>Documentation generated with commit <span onclick="navigator.clipboard.writeText('c50de1fe628b3cbfad142186c8afac78067f9de4')" title="c50de1fe628b3cbfad142186c8afac78067f9de4">c50de1f</span></div>
+    
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
